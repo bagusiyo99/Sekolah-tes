@@ -1,0 +1,30 @@
+.content-wrapper {
+  margin-top: 20px;
+  /* jarak antara navbar dan konten */
+  padding: 10px;
+  text-align: center;
+  /* untuk memusatkan konten */
+}
+
+.btn-sm {
+  margin-left: 5px;
+}
+
+.nav-item.active .nav-link {
+  background-color: #FF6E31;
+  color: black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Pastikan z-index nya lebih tinggi dari konten di bawahnya */
+  overflow-y: auto;
+}

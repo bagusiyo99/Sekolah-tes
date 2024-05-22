@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card custom-card">
+        <div class="card-header bg-success text-white">
+          <h2 class="text-center">Tambahkan Data</h2>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="validateForm" (ngSubmit)="postAd()">
+            <div class="form-group">
+              <!-- Unggah gambar -->
+              <div class="profile-badge">
+                <input type="file" class="form-control-file" accept="image/x-png, image/gif, image/jpeg" (change)="onFileSelected($event)" />
+                <label for="upload_profile_image" class="upload-label ml-5" *ngIf="selectedFile">
+                  <img class="profile mr-5" [src]="imagePreview" alt="profile" style="width: 100px; height: 100px;" />
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group mt-5 mb-3">
+              <!-- Input nama -->
+              <input class="form-control" placeholder="Nama" formControlName="nameProduct" />
+              <div *ngIf="validateForm.get('nameProduct').errors && validateForm.get('nameProduct').touched" class="text-danger">Nama tidak valid!</div>
+            </div>
+
+            <div class="form-group mb-3">
+              <input class="form-control" placeholder="Stock" formControlName="stock" type="number" min="0" />
+              <div *ngIf="validateForm.get('stock').errors && validateForm.get('stock').touched" class="text-danger">Harus berupa angka!</div>
+            </div>
+
+            <div class="form-group mb-3">
+              <input class="form-control" placeholder="Stock " formControlName="remainingStock" type="number" min="0" />
+              <div *ngIf="validateForm.get('remainingStock').errors && validateForm.get('remainingStock').touched" class="text-danger">Harus berupa angka!</div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="kindProduct">Jenis Produk</label>
+              <select class="form-control" formControlName="kindProduct" id="kindProduct" placeholder="Nama">
+                <option disabled selected>Pilih jenis Produk</option>
+
+                <option *ngFor="let option of kindProductOptions" [value]="option">{{ option }}</option>
+              </select>
+            </div>
+
+
+
+
+
+            <div class="form-group mb-3">
+              <!-- Input deskripsi -->
+              <angular-editor class="form-control" placeholder="Deskripsi" formControlName="description">
+              </angular-editor>
+              <div *ngIf="validateForm.get('description').errors && validateForm.get('description').touched" class="text-danger">Deskripsi tidak valid!</div>
+            </div>
+
+            <!-- Tombol submit -->
+            <button class="btn btn-success btn-block" type="submit">Tambahkan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

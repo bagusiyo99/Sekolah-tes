@@ -1,0 +1,48 @@
+// /* CSS untuk tampilan container */
+// .container {
+//   margin-top: 20px;
+// }
+
+/* Gaya untuk elemen card */
+.card {
+  /* Border untuk card */
+  border-radius: 10px;
+  /* Border radius untuk sudut yang lebih bulat */
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.15);
+  /* Shadow untuk memberikan efek bayangan */
+}
+
+// /* CSS untuk gambar di kartu detail */
+// .img-container img {
+//   max-width: 100%;
+//   height: auto;
+//   border-radius: 10px;
+// }
+
+// /* CSS untuk teks di kartu detail */
+// .text-container {
+//   color: #333;
+// }
+
+// /* CSS untuk kartu pemesanan */
+// .booking-card form {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+// }
+/* Gaya tombol hijau sebelum diklik */
+.btn-green {
+  background-color: #28a745;
+  /* Hijau */
+  border-color: #28a745;
+  /* Hijau */
+  color: white;
+  /* Warna teks */
+}
+
+.btn-green:hover {
+  background-color: #218838;
+  /* Hijau yang lebih gelap */
+  border-color: #1e7e34;
+  /* Hijau yang lebih gelap */
+}

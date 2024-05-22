@@ -1,0 +1,33 @@
+<div class="approved-total">
+  <button type="button" class="btn btn-success mt-5" (click)="downloadAllInvoices()">Download Kwitansi</button>
+</div>
+
+<div class="menu-inner py-1 mt-2" *ngIf="OrderProduct && OrderProduct.length > 0">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-bordered text-center" id="data">
+          <thead>
+            <tr>
+              <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 14px; vertical-align: bottom; text-align: center;">Produk</th>
+              <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 14px; vertical-align: bottom; text-align: center;">Jumlah Pesanan </th>
+              <th class="heading" style=" background-color: rgb(11, 112, 61); color: white; font-size: 14px; vertical-align: bottom; text-align: center;">Pengembalian Buku</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of OrderProduct" style="border-color: black; text-transform: uppercase;">
+              <td style="font-weight: 600; padding: 10px;">{{ booking.nameProduct }}</td>
+              <td style=" font-weight: 600; padding: 10px;">{{ booking.amount }}</td>
+              <button class="btn-kwitansi " (click)="deleteBooking(booking.id)">Batal</button>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-info" role="alert" *ngIf="!OrderProduct || OrderProduct.length === 0">
+  Tidak ada data yang tersedia.
+</div>

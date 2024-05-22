@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg bg-success text-white mb-5" *ngIf="isCompanyLoggedIn">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">Admin</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/company/dashboard']" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/company/boking']">Pinjaman</a>
+        </li>
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/company/postingan']">Postingan</a>
+        </li>
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/blog/articles']" routerLinkActive="active">Artikel</a>
+        </li>
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/company/transaksi']" routerLinkActive="active">Riwayat Transaksi</a>
+        </li>
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/teacher/teachers']" routerLinkActive="active">Guru</a>
+        </li>
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/company/contacts']" routerLinkActive="active">Kontak</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <button class="btn btn-danger" type="button" routerLink="/logout" routerLinkActive="active" (click)="loguut()">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<nav class="navbar navbar-expand-lg bg-success text-white" *ngIf="isClientLoggedIn">
+  <link href="/assets/landing/img/favicon.ico" rel="icon">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">User</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white " [routerLink]="['/client/dashboard']" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white " [routerLink]="['/client/postingan']" routerLinkActive="active">Buku</a>
+        </li>
+
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/client/bookings']" routerLinkActive="active">Pinjaman</a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link text-white" [routerLink]="['/client/contact']" routerLinkActive="active">Kontak</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <button class="btn btn-danger" type="button" routerLink="/logout" routerLinkActive="active" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<router-outlet></router-outlet>

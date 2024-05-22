@@ -1,0 +1,56 @@
+<div class="menu-inner py-1 mt-2">
+  <div class="row">
+    <div class="col-6">
+
+      <div class="d-flex justify-content-start align-content-center mb-3">
+        <nz-date-picker [(ngModel)]="searchDate" [nzFormat]="'yyyy-MM-dd'" nzPlaceHolder="Pilih Tanggal" style="width: 30%;"></nz-date-picker>
+        <button class="btn btn-success " (click)="searchByDate()" style="margin-left: 10px;">Cari</button>
+      </div>
+      <div class="d-flex justify-content-start align-content-center mb-3">
+        <button class="btn btn-success" (click)="exportToExcel()">Export Excel</button>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="d-flex justify-content-end align-content-center mb-3">
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="searchAdByName()" class="text-center">
+          <div class="form-group d-inline-flex">
+            <input nz-input placeholder="Cari Produk" formControlName="service" nzSize="large" class="form-control mr-4" style="width: 70%;" />
+            <button nz-button nzSize="large" nzType="primary" class="btn btn-success" style="margin-left: 10px;">Cari</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <div class="col-12">
+
+      <div class="card">
+
+        <div class="card-body">
+
+          <table class="table table-bordered text-center" id="data">
+            <thead>
+              <tr class="btn-secondary">
+                <th class="heading" style=" background-color:#1A4D2E;color: white; font-size: 14px; vertical-align: bottom; text-align: center;">Nama Siswa</th>
+                <th class="heading" style="background-color:#1A4D2E; color: white; font-size: 14px; vertical-align: bottom; text-align: center;">Buku</th>
+                <th class="heading" style="background-color:#1A4D2E; color: white; font-size: 14px; vertical-align: bottom; text-align: center;">Jumlah Pinjaman</th>
+
+              </tr>
+            </thead>
+
+
+            <tbody>
+              <tr *ngFor="let booking of bookings" style="border-color: black; text-transform: uppercase;">
+                <td style="font-weight: bold; border-color: black;">{{ booking.userName }}</td>
+                <td style="font-weight: bold; border-color: black;">{{ booking.nameProduct }}</td>
+                <td style="font-weight: 600; padding: 10px;">{{ booking.amount }}</td>
+
+
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

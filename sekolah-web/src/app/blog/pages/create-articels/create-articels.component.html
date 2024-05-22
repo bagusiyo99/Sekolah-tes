@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card custom-card">
+        <div class="card-header bg-success text-white">
+          <h2 class="text-center">Tambahkan Data</h2>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="validateForm" (ngSubmit)="postArticle()">
+            <div class="form-group">
+              <!-- Unggah gambar -->
+              <div class="profile-badge">
+                <input type="file" class="form-control-file" accept="image/x-png, image/gif, image/jpeg" (change)="onFileSelected($event)" />
+                <label for="upload_profile_image" class="upload-label ml-5" *ngIf="selectedFile">
+                  <img class="profile mr-5" [src]="imagePreview" alt="profile" style="width: 100px; height: 100px;" />
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group mt-5 mb-3">
+              <!-- Input Judul -->
+              <input class="form-control" placeholder="Judul" formControlName="title" />
+              <div *ngIf="validateForm.get('title').errors && validateForm.get('title').touched" class="text-danger">Judul tidak valid!</div>
+            </div>
+
+
+            <div class="form-group mb-3">
+              <!-- Input deskripsi -->
+              <textarea class="form-control" placeholder="Deskripsi" formControlName="description"></textarea>
+              <div *ngIf="validateForm.get('description').errors && validateForm.get('description').touched" class="text-danger">Deskripsi tidak valid!</div>
+            </div>
+
+            <!-- Tombol submit -->
+            <button class="btn btn-success btn-block" type="submit">Tambahkan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

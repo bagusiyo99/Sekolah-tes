@@ -1,0 +1,67 @@
+<h1>Tambah Produk</h1>
+
+<div class="container mt-3">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="searchAdByName()" class="my-4 text-center mb-5 mt-5 bi-search">
+    <div class="form-group d-inline-flex">
+      <input nz-input placeholder="Pencarian" formControlName="service" nzSize="large" class="form-control mr-4" style="width: 70%;" />
+      <button nz-button nzSize="large" class="btn btn-success ml-5" style="margin-left: 10px;">Cari</button>
+    </div>
+  </form>
+  <div class="container mb-4">
+    <div class="d-flex justify-content-start">
+      <button class="btn btn-success" [routerLink]="['/company/tambahProduk']" routerLinkActive="active">Tambah Produk</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 15px; vertical-align: bottom; text-align: center;" scope="col">Gambar</th>
+          <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 15px; vertical-align: bottom; text-align: center;" scope="col">Nama Produk</th>
+
+          <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 15px; vertical-align: bottom; text-align: center;" scope="col">jenis Prodcut</th>
+          <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 15px; vertical-align: bottom; text-align: center;" scope="col">Stock Prodcut</th>
+          <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 15px; vertical-align: bottom; text-align: center;" scope="col">Stock Prodcut Terkini</th>
+          <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 15px; vertical-align: bottom; text-align: center;" scope="col">Deskripsi</th>
+          <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 15px; vertical-align: bottom; text-align: center;" scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ad of pagedAds" style="border-color: black; text-transform: uppercase;">
+          <td class="heading" style="font-size: 18px; vertical-align: middle; text-align: center;"><img [src]="updateImg(ad.returnedImg)" alt="Image of {{ ad.serviceName }}" style="height: 200px; width: 200px; border: 1px solid #ddd;"></td>
+          <td class="heading" style="font-size: 18px; vertical-align: middle; text-align: center;">{{ ad.nameProduct }}</td>
+          <td class="heading" style="font-size: 18px; vertical-align: middle; text-align: center;">{{ ad.kindProduct }}</td>
+          <td class="heading" style="font-size: 18px; vertical-align: middle; text-align: center;">{{ ad.stock }}</td>
+          <td class="heading" style="font-size: 18px; vertical-align: middle; text-align: center;">{{ ad.remainingStock }}</td>
+          <td class="heading" style="font-size: 18px; vertical-align: middle; text-align: center;" [innerHTML]="limitDescription(ad.description, 20)"></td>
+
+          <td class="heading" style="font-size: 18px; vertical-align: middle; text-align: center;">
+            <button class="btn btn-success  mr-2" (click)="updateAd(ad.id)">Update</button>
+            <br>
+            <button class="btn btn-danger mt-3" (click)="deleteAd(ad.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<nav aria-label="Room pagination" class="mt-3 mb-5">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" *ngIf="currentAdsPage > 1">
+      <button class="page-link" (click)="goToAdsPage(currentAdsPage - 1)">Previous</button>
+    </li>
+    <li class="page-item" *ngFor="let page of [].constructor(totalAdsPages); let i = index">
+      <button class="page-link" [ngClass]="{'active bg-pribtn-success': currentAdsPage === i + 1}" (click)="goToAdsPage(i + 1)">
+        {{ i + 1 }}
+      </button>
+    </li>
+    <li class="page-item" *ngIf="currentAdsPage < totalAdsPages">
+      <button class="page-link" (click)="goToAdsPage(currentAdsPage + 1)">Next</button>
+    </li>
+  </ul>
+</nav>

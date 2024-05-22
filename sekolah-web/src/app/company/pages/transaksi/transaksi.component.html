@@ -1,0 +1,32 @@
+<h1>Riwayat Produk</h1>
+
+<div class="menu-inner py-1 mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-bordered text-center" id="data">
+            <thead>
+              <tr class="btn-secondary">
+                <th class="heading" style=" background-color: rgb(11, 112, 61); color: white; font-size: 14px; vertical-align: bottom; text-align: center;">Nama Client</th>
+                <th class="heading" style="background-color: rgb(11, 112, 61); color: white; font-size: 14px; vertical-align: bottom; text-align: center;">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let booking of bookings; let i = index" style="border-color: black; text-transform: uppercase;">
+                <td style="font-weight: bold; border-color: black;">{{ booking.userName }}</td>
+
+                <td>
+                  <button class="btn btn-success" (click)="generateReceipt(booking)">Detail Peminjaman</button>
+                </td>
+              </tr>
+              <tr *ngIf="bookings && bookings.length === 0">
+                <td colspan="3">Tidak ada transaksi yang disetujui.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
