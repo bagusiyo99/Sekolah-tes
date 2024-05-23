@@ -1,5 +1,16 @@
 // tes kerjaan
-website sekolah dengan berbagai fitur
+
+# instal angular
+-npm update/install
+-npm star
+
+# Spring-boot
+-buatkan database dengan nama : test-sekolah
+- lalu jalankan 
+
+- link vidio website, jika eror penginstalan : https://drive.google.com/drive/folders/1qC1BS7IFjne1Fzfc3UgfgOGZ9NgHDHsR?usp=sharing
+  
+# website sekolah dengan berbagai fitur
 - Peminjaman buku
 - artikel
 - guru
@@ -9,10 +20,10 @@ website sekolah dengan berbagai fitur
 - export excel
 
   dengan api springboot dan tampilan angular
-template bootstrap license:
+#template bootstrap license:
 Landing page : Colorlib 
 
-License image:
+# License image:
 - unplash
 - manypixels
 -freepik
