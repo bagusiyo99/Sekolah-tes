@@ -21,7 +21,7 @@
 
   dengan api springboot dan tampilan angular
 #template bootstrap license:
-Landing page : Colorlib 
+Landing page :  HTML Codex 
 
 # License image:
 - unplash
