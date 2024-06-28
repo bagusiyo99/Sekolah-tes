@@ -1,4 +1,3 @@
-// test job
 
 # instal angular
 -npm update/install
