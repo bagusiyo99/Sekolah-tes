@@ -1,4 +1,4 @@
-# instal angular
+# insttal angular
 -npm update/install
 -npm star
 
@@ -17,7 +17,7 @@
 - riwayat peminjaman
 - export excel
 
-  dengan api springboot dan tampilan angular
+dengan api springboot dan tampilan angular
 #template bootstrap license:
 Landing page :  HTML Codex 
 
