@@ -1,4 +1,4 @@
-# instal angular
+# instal/update angular
 -npm update/install
 -npm star
 
